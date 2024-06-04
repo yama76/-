@@ -7,7 +7,7 @@ import streamlit as st
 import plotly.express as px
 
 # SecretsからJSONキーを読み込む
-credentials_dict = json.loads(st.secrets["gcp_service_account"])
+credentials_dict = st.secrets["gcp_service_account"]
 
 # Google Sheetsに接続するための設定
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
