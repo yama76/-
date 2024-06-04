@@ -1,6 +1,5 @@
 import os
 import json
-from dotenv import load_dotenv
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
