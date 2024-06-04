@@ -6,17 +6,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import streamlit as st
 import plotly.express as px
 
-# .envファイルから環境変数を読み込む
-load_dotenv()
-
-# 環境変数からJSONファイルのパスを取得
-credentials_file_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-
-# 環境変数が正しく読み込まれているか確認
-if credentials_file_path is None:
-    raise ValueError("GOOGLE_APPLICATIONS_CREDENTIALS環境変数が設定されていません。")
-else:
-    print(f"Credentials file path: {credentials_file_path}")
+# Streamlit Secretsから環境変数を取得
+credentials = st.secrets["gcp_service_account"]
 
 # Google Sheetsに接続するための設定
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
