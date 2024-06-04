@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 from retry import retry
 import requests
 from bs4 import BeautifulSoup
