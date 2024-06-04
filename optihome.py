@@ -9,9 +9,6 @@ import plotly.express as px
 # SecretsからJSONキーを読み込む
 credentials_json = st.secrets["gcp_service_account"]
 
-# JSONキーを辞書に変換
-credentials_dict = json.loads(json.dumps(credentials_json))
-
 # Google Sheetsに接続するための設定
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_dict, scope)
