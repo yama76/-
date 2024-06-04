@@ -1,12 +1,16 @@
 import os
+import json
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import streamlit as st
 import plotly.express as px
 
-# Streamlit Secretsから環境変数を取得
-credentials = st.secrets["gcp_service_account"]
+# SecretsからJSONキーを読み込む
+credentials_json = st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]
+
+# JSONキーを辞書に変換
+credentials_dict = json.loads(json.dumps(credentials_json))
 
 # Google Sheetsに接続するための設定
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
