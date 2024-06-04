@@ -14,7 +14,7 @@ credentials_dict = json.loads(json.dumps(credentials_json))
 
 # Google Sheetsに接続するための設定
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_file_path, scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_dict, scope)
 client = gspread.authorize(creds)
 
 # スプレッドシートを開く
