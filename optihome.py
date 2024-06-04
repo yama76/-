@@ -7,7 +7,7 @@ import streamlit as st
 import plotly.express as px
 
 # SecretsからJSONキーを読み込む
-credentials_json = st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]
+credentials_json = st.secrets["gcp_service_account"]
 
 # JSONキーを辞書に変換
 credentials_dict = json.loads(json.dumps(credentials_json))
